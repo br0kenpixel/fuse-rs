@@ -10,7 +10,7 @@ keywords    = ["fuse", "filesystem", "bindings", "ffi"]
 description = "A wrapper around libfuse-sys for writing file systems using FUSE."
 
 [dependencies]
-libfuse-sys = { version = "0.3.0", default-features = false, features = ["fuse_35", "fuse_highlevel"] }
+libfuse-sys = { version = "0.4.0", default-features = false, features = ["fuse_35", "fuse_highlevel"] }
 libc        = "0.2.70"
 once_cell   = "1.4.0"
 nix         = "0.17.0"
@@ -85,3 +85,6 @@ full = [
 [[example]]
 name = "hellofs"
 required-features = ["open", "getattr", "readdir", "read"]
+
+[patch.crates-io]
+libfuse-sys = { git = "https://github.com/br0kenpixel/libfuse-sys" }
